@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    border: 1px solid red;
+    height: 40px;
+    width: 100px;
+    float: left;
+    margin-top: 5px;
+}
+nav{
+    border: 1px solid green;
+    width: 200px;
+    height: 50px;
+    float: right;
+}
+.clearfix::after{/*div加了float就脱离了文档流了header里面的内容为空，加入clearfix就不会了*/
+    content:"";
+    display: block;
+    clear: both;
+}
+header{
+    border: 1px solid black;
+}
