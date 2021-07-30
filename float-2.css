@@ -31,9 +31,11 @@ max-width: 100%;
 }
  .nav{
      float: left;
+     
      margin-right: 30px;
  }
  header{
+     margin-top: 20px;
    
      background: white;
  }
