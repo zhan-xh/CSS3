@@ -10,7 +10,7 @@ ul,ol{
     content: '';
     display: block;
     clear: both;
-}
+} 
 ul>li{
    
     float: left;
