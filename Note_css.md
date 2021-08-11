@@ -91,8 +91,57 @@ width只含content的盒子就是content-box,包含border padding content的盒�
 2. 选择盒模型 box-sizing:border-box;
 3. 引入外部css样式表 html头部添加 <link rel="stylesheet" href="style.css" type="text/css">
 ### 4.3 margin合并
+1. 两个孩子之间的上下margin会合并，即是孩子1 的下margin会与孩子2的上margin合并为一个margin，可以用以下代码改变。
+```css
+display:inline-block;
+```
+2. 第一个与最后一个孩子的margin会与parent的margin合并，若不想合并的话有三种解决方式：
+* 加padding
+* 加overflow:hidden
+* 加border
+3. margin只有上下合并，没有左右合并
+4. margin合并之间必须没有其他东西，例如padding，有的话就无法合并
 ### 4.4 基本单位
-
+1. 长度单位(mdn 搜索width)
+* px 像素
+* em 相对于自身font-size的倍数
+```css
+.div{
+    font-size:20px;
+    border:1px solid red;
+    width:3em;/*  3*font-size=3*20px */
+}
+```
+* 百分数
+* rgb(0,0,0)  rgba(255,0,127,0) 
+可以直接使用qq截图取色，按下ctrl即可切换16进制,rgba可以设置透明度，0为全透明，1为不透明
+* hsl(360,100%,100%)  hsl(色相,饱和度,亮度) 
 ## 5. float布局
+先说明：
+一般要兼容老的浏览器使用flex布局，要兼容IE9，使用float布局，如果只兼容最新的浏览器，使用grid布局
+### 5.1 步骤
+1. 子元素加width和flaot:left;
+2. 在父元素上写 .clearfix 固定写法
+div加了float就脱离了文档流了，标签里面的内容为空，加入clearfix就不会了
+```css
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:all;
+}
+```
+### 5.2 经验
+1. 最后一个div不写width，但可以写最大宽度
+2. float是针对IE的，无法响应式
+3. 尽量采用display:inline-block;
+4. 网页的背景图片，右键检查可以得到地址，可以在img标签使用
+5. outline:1px solid red; 不占宽度的border
+5. margin：0 auto；自动居中
+但是以下方式更好
+```css
+margin-left:auto;
+margin-right:auto;
+```
+6. 可以采用负margin来实现平均布局，中间加个x（clearfix）可以消除float，外边距也不会合并
 ## 6. flex布局
 ## 7. grid布局
