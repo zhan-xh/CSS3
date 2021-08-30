@@ -144,4 +144,91 @@ margin-right:auto;
 ```
 6. 可以采用负margin来实现平均布局，中间加个x（clearfix）可以消除float，外边距也不会合并
 ## 6. flex布局
+### 6.1 使用flex布局
+1. 采用flex布局
+```css
+body{
+display:flex | inline-flex;
+}
+
+```
+2. 控制流动方向
+```css
+.container{
+    flex-direction:row | row-reverse | column | column-reverse;
+}
+```
+3. 控制是否换行
+```css
+.container{
+    flex-wrap:wrap | nowrap;
+}
+```
+4. 控制对齐方式
+```css
+.container{
+    justify-content: flex-start | flex-end;
+    /*从行首或者行尾开始*/
+}
+```
+flex具有多种灵活多变的对齐方式，具体参考MDN文档[justify-content](https://developer.mozilla.org/zh-CN/docs/Web/CSS/justify-content)
+5. item的属性
+* order 排序
+可以利用order改变item的显示顺序，order默认为0
+```css
+.item:first-child{
+    order:5;
+}
+.item:nth-child(2){
+    order:100;
+}
+.item:nth-child(3){
+    order:30;
+}
+.item:last-child{
+    order:5;
+}
+```
+6. flex-grow 剩余空间分配
+这个属性主要是控制item多余空间的分配，不写的话默认为0
+flex-grow:0;的意思不是宽度为0 ，而是只更具内容来确定宽度
+```css
+.item:first-child{
+    flex-grow:1;
+}
+.item:nth-child(2){
+    flex-grow:2;
+}
+```
+以上代码的意思是，在容器中剩余的空间里，平均分成三份，第一个孩子占一份，第二个孩子占2份。
+7. flex-shrink  元素的收缩
+flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。
+默认是1，代表当内容空间不足时，大家一起收缩。
+当flex-shrink:0;时是防止变瘦，无论多窄我都不收缩，比如淘宝就是这样设计的。
+8. align-items 交叉轴方向上的对齐方式
+例如
+```css
+.container{
+    align-items:center; /*居中 主轴横向对齐*/
+}
+.container2{
+    justify-content:center | space-between; 
+}
+```
+### 6.2 flex 实践
+1. vertical-align 垂直对齐
+```css
+.logo{
+    vertical-align:middle;
+}
+```
+以上使用方法常常用在图片logo上，防止出现奇怪的空隙。
+2. 不要轻易把width和height都写死，因为用户使用不同的设备观看，但可以写最大最小宽度
+```css
+.container{
+    min-width:500px;
+    max-width:500px;
+```
+3. flex基本可以满足所有布局
+flex的MDN详细解释[Flexbox](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 ## 7. grid布局
