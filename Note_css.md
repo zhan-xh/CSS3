@@ -266,7 +266,7 @@ grid尤其适合不规则布局，像衣柜一样的布局都可以使用grid
 }
 ```
 ### 7.3 grid-template-areas 分区
-![示意图](D:\WEB\CSS3\grid-template-areas.png)
+![示意图](CSS3\grid-template-areas.png)
 html
 ```html
 <body>
