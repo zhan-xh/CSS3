@@ -232,3 +232,81 @@ flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其
 3. flex基本可以满足所有布局
 flex的MDN详细解释[Flexbox](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
 ## 7. grid布局
+在css布局中，如果是一维布局我们采用flex，二维布局采用grid
+在grid布局中，分container和items
+grid尤其适合不规则布局，像衣柜一样的布局都可以使用grid
+### 7.1 成为container items
+
+```css
+.container{
+    display:grid | inline-grid;
+}
+.container{
+    grid-template-columns:40px 50px auto 50px 40px;
+    grid-template-rows:25% 100px auto;
+    
+}
+.item-a{
+    /*item可以设置范围，其中数字代表线条的名字*/
+    grid-column-start:2;
+    grid-column-end:3;
+    grid-row-start:1;
+    grid-row-end:3;
+}
+
+```
+### 7.2 fr 份
+比如分成2行3列
+```css
+.container{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    grid-gap:12px;/*格子间隙*/
+}
+```
+### 7.3 grid-template-areas 分区
+![示意图](D:\WEB\CSS3\grid-template-areas.png)
+html
+```html
+<body>
+<div class="container">
+    <header>herder</header>
+    <aside>aside</aside>
+    <main>main</main>
+    <div class="ad">ad</div>
+    <footer>footer</footer>
+</div>
+</body>
+```
+css代码部分
+```css
+   .container {
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: 60px auto 60px;
+            grid-template-columns: 100px auto 100px;
+            grid-template-areas: 
+            "header header header"
+            "aside  aside  aside"
+            "footer  footer footer"
+        }
+        .container >*{
+            border: 1px solid red;
+        }
+        .container > header{
+            grid-area: header;
+        }
+        .container >aside{
+            grid-area: aside;
+        }
+        .container>main{
+            grid-area: main;
+        }
+        .container> .ad{
+            grid-area: ad;
+        }
+        .container>footer{
+            grid-area: footer;
+        }
+```
