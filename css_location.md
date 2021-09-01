@@ -1,5 +1,27 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [CSS定位](#css%E5%AE%9A%E4%BD%8D)
+  - [1 一个div的分层](#1-%E4%B8%80%E4%B8%AAdiv%E7%9A%84%E5%88%86%E5%B1%82)
+    - [div分层 从上往下](#div%E5%88%86%E5%B1%82-%E4%BB%8E%E4%B8%8A%E5%BE%80%E4%B8%8B)
+  - [2 position的5个取值](#2-position%E7%9A%845%E4%B8%AA%E5%8F%96%E5%80%BC)
+    - [2.1相对定位](#21%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D)
+    - [2.2 绝对定位](#22-%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D)
+      - [使用场景](#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF)
+    - [2.3 固定定位fixed](#23-%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8Dfixed)
+      - [使用场景](#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF-1)
+        - [经验](#%E7%BB%8F%E9%AA%8C)
+    - [2.4 粘贴定位 sticky](#24-%E7%B2%98%E8%B4%B4%E5%AE%9A%E4%BD%8D-sticky)
+      - [经验](#%E7%BB%8F%E9%AA%8C-1)
+  - [层叠上下文](#%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87)
+    - [如何创建一个作用域](#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%BD%9C%E7%94%A8%E5%9F%9F)
+    - [注意](#%E6%B3%A8%E6%84%8F)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # CSS定位
-[toc]
+
 ## 1 一个div的分层
 首先需要明确一个点：布局是屏幕平面上的，而定位是垂直于屏幕上的，background是包含border的，即是background处于border更下一层。
 ### div分层 从上往下

@@ -1,3 +1,39 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [CSS3学习笔记](#css3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)
+  - [1. CSS reset](#1-css-reset)
+  - [2. 体系化学习css](#2-%E4%BD%93%E7%B3%BB%E5%8C%96%E5%AD%A6%E4%B9%A0css)
+    - [2.1 语法](#21-%E8%AF%AD%E6%B3%95)
+    - [2.2 at语法](#22-at%E8%AF%AD%E6%B3%95)
+    - [2.3 调试css](#23-%E8%B0%83%E8%AF%95css)
+    - [2.4 border 调试法](#24-border-%E8%B0%83%E8%AF%95%E6%B3%95)
+    - [2.5 关于查资料](#25-%E5%85%B3%E4%BA%8E%E6%9F%A5%E8%B5%84%E6%96%99)
+    - [2.6 规范权威](#26-%E8%A7%84%E8%8C%83%E6%9D%83%E5%A8%81)
+  - [3. 文档流](#3-%E6%96%87%E6%A1%A3%E6%B5%81)
+    - [3.1 经验](#31-%E7%BB%8F%E9%AA%8C)
+    - [3.2 inline内联](#32-inline%E5%86%85%E8%81%94)
+    - [3.3 注意事项](#33-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)
+    - [3.4 溢出overflow的处理方法](#34-%E6%BA%A2%E5%87%BAoverflow%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95)
+    - [3.5 脱离文档流](#35-%E8%84%B1%E7%A6%BB%E6%96%87%E6%A1%A3%E6%B5%81)
+  - [4. 盒模型](#4-%E7%9B%92%E6%A8%A1%E5%9E%8B)
+    - [4.1 content-box与border-box](#41-content-box%E4%B8%8Eborder-box)
+    - [4.2 经验](#42-%E7%BB%8F%E9%AA%8C)
+    - [4.3 margin合并](#43-margin%E5%90%88%E5%B9%B6)
+    - [4.4 基本单位](#44-%E5%9F%BA%E6%9C%AC%E5%8D%95%E4%BD%8D)
+  - [5. float布局](#5-float%E5%B8%83%E5%B1%80)
+    - [5.1 步骤](#51-%E6%AD%A5%E9%AA%A4)
+    - [5.2 经验](#52-%E7%BB%8F%E9%AA%8C)
+  - [6. flex布局](#6-flex%E5%B8%83%E5%B1%80)
+    - [6.1 使用flex布局](#61-%E4%BD%BF%E7%94%A8flex%E5%B8%83%E5%B1%80)
+    - [6.2 flex 实践](#62-flex-%E5%AE%9E%E8%B7%B5)
+  - [7. grid布局](#7-grid%E5%B8%83%E5%B1%80)
+    - [7.1 成为container items](#71-%E6%88%90%E4%B8%BAcontainer-items)
+    - [7.2 fr 份](#72-fr-%E4%BB%BD)
+    - [7.3 grid-template-areas 分区](#73-grid-template-areas-%E5%88%86%E5%8C%BA)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # CSS3学习笔记
 [toc]
 哪些浏览器支持css的某个元素特性?
