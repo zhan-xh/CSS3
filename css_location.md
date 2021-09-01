@@ -123,3 +123,29 @@ position:fixed;
 #### 经验
 * 如果写了absolute，一般都要补一个relative
 * 若写了absolute或者fixed，一定要补一个top和left
+
+## 层叠上下文
+MDN文档参考 [css层叠上下文](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)
+z-index谁的数值大，谁的层数就高，就可以覆盖别人，默认z-index=0;
+当z-index=-1|-2|-3;则其层数比background更低。
+从上往下，层数降低
+* 定位元素（z-index=0 | 1| 2.....）
+* 内联子元素(文字内容)
+* 浮动元素（float:left | right）//脱离了文档流，比之前上升了一点，即是浮动
+* 块级子元素(div)
+* border
+* background
+* 定位元素(z-index=-1)
+每一个层叠上下文相当于一个小世界作用域，处在同一个世界的z-index才可以比较，不同作用域的z-index无法比较。
+### 如何创建一个作用域
+当
+position:relative;
+1. 令z-index=0;注意不是auto，auto不会创建层叠上下文
+2. display:flex;
+3. opacity 只要不为1就可以创建
+4. position:fixed;
+5. transform:none;
+
+
+### 注意
+默认层叠上下文是html元素，html会把所有元素包裹起来
