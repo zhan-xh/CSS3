@@ -1,4 +1,5 @@
 # CSS定位
+[toc]
 ## 1 一个div的分层
 首先需要明确一个点：布局是屏幕平面上的，而定位是垂直于屏幕上的，background是包含border的，即是background处于border更下一层。
 ### div分层 从上往下
